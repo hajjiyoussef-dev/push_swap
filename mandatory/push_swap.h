@@ -15,17 +15,22 @@ typedef struct s_stack
 
 
 // parsing
-t_stack ft_filling_a(int argc, char **argv);
+t_stack *ft_filling_a(int argc, char **argv);
 int ft_argv_empty(char **argv);
 int ft_is_space(char **argv);
 char	*ft_strjoin(int size, char **strs, char *sep);
 void ft_error(void);
 char	**ft_split(char const *s, char c);
 int	ft_atoi(const char *c);
+
 //lists
 t_stack ft_free(t_stack **lst);
 t_stack *ft_new_stack(int content);
 t_stack *ft_lst_last(t_stack *lst);
+t_stack *ft_lst_add_back(t_stack **stack, t_stack *new_stack);
+
+// the index
+t_stack ft_give_the_stack_index(t_stack **stack);
 
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 22:08:19 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/03 23:21:34 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/03 23:22:54 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,4 @@ t_stack *ft_lst_add_back(t_stack **stack, t_stack *new_stack)
         *stack = new_stack;
     else
         (ft_lst_last(*stack))->next = new_stack;
-
 }
