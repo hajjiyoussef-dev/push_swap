@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:49:56 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/03 20:48:51 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/03 23:16:34 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ t_stack ft_filling_a(int argc, char **argv)
     t_stack *a;
     char *s;
     char **str;
+    int i;
+    int num;
     
 
     if (!ft_argv_empty(argv))
@@ -64,6 +66,13 @@ t_stack ft_filling_a(int argc, char **argv)
     
     if (!str)
         (free(s), ft_error());
+    i = 0;
+    while (str[i++])
+    {
+        num =  ft__atoi(str[i]);
+        
+    }
+    
     
         
     

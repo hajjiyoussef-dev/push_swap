@@ -21,5 +21,11 @@ int ft_is_space(char **argv);
 char	*ft_strjoin(int size, char **strs, char *sep);
 void ft_error(void);
 char	**ft_split(char const *s, char c);
+int	ft_atoi(const char *c);
+//lists
+t_stack ft_free(t_stack **lst);
+t_stack *ft_new_stack(int content);
+t_stack *ft_lst_last(t_stack *lst);
+
 
 #endif
