@@ -6,13 +6,13 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 22:08:19 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/03 23:22:54 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/04 11:06:32 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack ft_free(t_stack **lst)
+void ft_free(t_stack **lst)
 {
     t_stack *help;
     
@@ -26,7 +26,6 @@ t_stack ft_free(t_stack **lst)
         *lst = help;
     }
     *lst =  NULL;
-    
     
 }
 
@@ -56,7 +55,7 @@ t_stack *ft_lst_last(t_stack *lst)
 }
 
 
-t_stack *ft_lst_add_back(t_stack **stack, t_stack *new_stack)
+void ft_lst_add_back(t_stack **stack, t_stack *new_stack)
 {
     if (!stack)
         return ;
@@ -64,4 +63,23 @@ t_stack *ft_lst_add_back(t_stack **stack, t_stack *new_stack)
         *stack = new_stack;
     else
         (ft_lst_last(*stack))->next = new_stack;
+}
+
+int ft_check_if_dup(t_stack *a)
+{
+    t_stack *help;
+
+    while (a)
+    {
+        help = a->next;
+        while (help)
+        {
+            if (a->nbr == help->nbr)
+                return (1);
+            else
+            help = help->next;
+        }
+        a = a->next;
+    }
+    return (0);
 }

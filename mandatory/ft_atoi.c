@@ -6,43 +6,48 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 22:06:59 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/03 22:07:16 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/04 13:20:59 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ft_signal(char c, int *s, size_t *i)
+static	int	ft_isdigit(int c)
 {
-	if ((c == '+' || c == '-'))
-	{
-		if (c == '-')
-			(*s) = -1;
-		(*i)++;
-	}
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }
 
-int	ft_atoi(const char *c)
+int	ft_atoi(const char *str)
 {
-	long	res;
-	long	temp;
-	size_t	i;
-	int		s;
+	int		i;
+	int		sn;
+	long long	num;
 
-	i = 0;
-	res = 0;
-	s = 1;
-	while (c[i] == 32 || (c[i] >= 9 && c[i] <= 13))
+	(1) && (i = 0, sn = 1, num = 0);
+	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n'
+		|| str[i] == '\r' || str[i] == '\v')
 		i++;
-	ft_signal(c[i], &s, &i);
-	while (c[i] != '\0' && (c[i] >= '0' && c[i] <= '9'))
+	if (str[i] == '-' && ft_isdigit(str[i + 1]))
+		sn *= -1;
+	if ((str[i] == '+' && ft_isdigit(str[i + 1]))
+		|| (str[i] == '-' && ft_isdigit(str[i + 1])))
+		i++;
+	while (str[i])
 	{
-		temp = res;
-		res = res * 10 + (c[i++] - 48);
-		if ((res / 10) != temp && s == -1)
-			return (0);
-		if ((res / 10) != temp && s == 1)
-			return (-1);
+		if (!ft_isdigit(str[i]))
+			ft_error();
+		if ((num > (2147483647 / 10) || (num == 2147483647 / 10 && (str[i] - '0') > 7)) ||
+		 (sn == -1 && num == 2147483647 / 10 && (str[i] - '0') == 8))
+			ft_error();
+		num = (str[i] - 48) + (num * 10);
+		i++;
 	}
-	return ((res * s));
+	num *= sn;
+	return (num);
+
+
+
+	
 }
