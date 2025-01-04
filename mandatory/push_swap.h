@@ -34,5 +34,10 @@ int ft_check_if_dup(t_stack *a);
 // the index
 void ft_give_the_stack_index(t_stack **stack);
 
+// push_swap_help.c
+size_t ft_size(t_stack *a);
+int ft_mqadin(t_stack *a);
+
+
 
 #endif
