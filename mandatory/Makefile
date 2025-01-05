@@ -1,24 +1,29 @@
-NAME  = push_swap;
-SRC = ./mandatory/push_swap.c ./mandatory/push_swap_help.c ./mandatory/parsing.c ./mandatory/ft_swap.c \
-	./mandatory/ft_strjoin.c ./mandatory/ft_split.c ./mandatory/ft_lists ./mandatory/ft_give_the_stack_index.c \
-	./mandatory/ft_error.c ./mandatory/ft_atoi.c 
-OBJ = ${SRC:.c=.o}
-CC = cc -Wall -Wextra -Werror
+NAME  = push_swap
+
+SRC = push_swap.c push_swap_help.c parsing.c ft_swap.c \
+		ft_strjoin.c ft_split.c ft_lists.c ft_give_the_stack_index.c \
+		ft_error.c ft_atoi.c 
+
+OBJS = ${SRC:.c=.o}
+CC = cc 
+CFLAGS = -Wall -Wextra -Werror 
 AR = ar -rc
 RM = rm -rf
 
-%.o = %.c push_swap.h
-	${CC} -c $< 
 
-${NAME} : ${OBJ}
-	${AR} ${NAME} ${OBJ}
+%.o : %.c 
+	${CC} ${CFLAGS} -c $<  -o $@
+
+${NAME}: ${OBJS}
+		@${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
 all: ${NAME}
 
 clean:
-	${RM} ${OBJ} 
+	${RM} ${OBJS} 
+	
 fclean : clean
 	${RM} ${NAME}
 
-re :  fclean re 
+re :  fclean all 
 

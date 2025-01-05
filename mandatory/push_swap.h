@@ -38,6 +38,9 @@ void ft_give_the_stack_index(t_stack **stack);
 size_t ft_size(t_stack *a);
 int ft_mqadin(t_stack *a);
 
+// swap operiton 
+void ft_sa(t_stack *a, int _write);
+
 
 
 #endif

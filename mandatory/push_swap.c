@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:58 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/05 21:39:02 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/05 23:39:26 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int main(int argc, char **argv)
         {
             // ft_stage_lwa7ch(&a, &b, size_a);
             if (size_a == 2)
-                ft_sa();
+                ft_sa(a, 0);
             
         }
         ft_free(&a);
