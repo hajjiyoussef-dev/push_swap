@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:58 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/04 19:30:40 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/05 21:39:02 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,11 @@
 #include <stdio.h>
 
 
-t_stack ft_stage_wa7ch()
-{
-    
-}
+// t_stack ft_stage_lwa7ch(t_stack *a, t_stack *b, size_t size_a)
+// {
+//     if (size_a == 2)
+//         ft_sa();
+// }
 
 
 int main(int argc, char **argv)
@@ -41,7 +42,10 @@ int main(int argc, char **argv)
 
         if (!ft_mqadin(a))
         {
-            ft_stage_wa7ch(&a, &b, size_a);
+            // ft_stage_lwa7ch(&a, &b, size_a);
+            if (size_a == 2)
+                ft_sa();
+            
         }
         ft_free(&a);
         ft_free(&b);
