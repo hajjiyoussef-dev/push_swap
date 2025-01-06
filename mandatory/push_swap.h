@@ -3,6 +3,7 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 
 typedef struct s_stack
@@ -13,6 +14,8 @@ typedef struct s_stack
     struct s_stack *next ;
 }   t_stack ;
 
+// free
+// void	ft_free_tab(char **tab);
 
 // parsing
 t_stack *ft_filling_a(int argc, char **argv);
@@ -39,7 +42,18 @@ size_t ft_size(t_stack *a);
 int ft_mqadin(t_stack *a);
 
 // swap operiton 
-void ft_sa(t_stack *a, int _write);
+void ft_sa(t_stack *a, int _write_it);
+
+
+
+//rotate
+//void ft_rotate(t_stack **stack);
+void ft_ra(t_stack **a, int _write_it);
+
+
+// sort_three
+
+void ft_sort_three(t_stack **a);
 
 
 

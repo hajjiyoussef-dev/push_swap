@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:58 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/05 23:39:26 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/06 14:23:35 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int main(int argc, char **argv)
     size_t size_a;
     t_stack *b;
 
+    size_a =  0;
+
     if (argc > 1)
     {
         a = ft_filling_a(argc, argv);
@@ -45,10 +47,13 @@ int main(int argc, char **argv)
             // ft_stage_lwa7ch(&a, &b, size_a);
             if (size_a == 2)
                 ft_sa(a, 0);
-            
+            else if (size_a == 3)
+                ft_sort_three(&a);
+         
+                
         }
-        ft_free(&a);
-        ft_free(&b);
+        //ft_free(&a);
+       // ft_free(&b);
     }
     return (0); 
 }
