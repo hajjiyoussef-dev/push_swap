@@ -42,7 +42,7 @@ size_t ft_size(t_stack *a);
 int ft_mqadin(t_stack *a);
 
 // swap operiton 
-void ft_sa(t_stack *a, int _write_it);
+void ft_sa(t_stack **a, int _write_it);
 
 
 
@@ -54,6 +54,9 @@ void ft_ra(t_stack **a, int _write_it);
 // sort_three
 
 void ft_sort_three(t_stack **a);
+
+// reverse_rotate 
+void ft_rra(t_stack **a, int _write_it);
 
 
 

@@ -2,7 +2,8 @@ NAME  = push_swap
 
 SRC = push_swap.c push_swap_help.c parsing.c ft_swap.c \
 		ft_strjoin.c ft_split.c ft_lists.c ft_give_the_stack_index.c \
-		ft_error.c ft_atoi.c  ft_sort_three.c  ft_rotate.c
+		ft_error.c ft_atoi.c  ft_sort_three.c  ft_rotate.c ft_reverse_rotate.c \
+		
 
 OBJS = ${SRC:.c=.o}
 CC = cc 

@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:58 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/06 14:23:35 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/06 21:20:41 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
         a = ft_filling_a(argc, argv);
         if (!a || ft_check_if_dup(a))
         {
-            ft_free(&a);
+            //ft_free(&a);
             ft_error();
         }
        // printf("hello");
@@ -46,9 +46,11 @@ int main(int argc, char **argv)
         {
             // ft_stage_lwa7ch(&a, &b, size_a);
             if (size_a == 2)
-                ft_sa(a, 0);
+                ft_sa(&a, 0);
             else if (size_a == 3)
                 ft_sort_three(&a);
+            else if (size_a == 5)
+                ft_sort_five(&a);
          
                 
         }
