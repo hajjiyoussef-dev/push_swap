@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:46:27 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/07 20:50:29 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/07 22:27:05 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ void ft_pa(t_stack **a , t_stack **b, int _write_it)
    
     if (_write_it == 0)
         write(1, "pa\n", 3);
-    t_stack *current = *b;
-    while (current)
-    {
-        printf("%d\n", current->nbr);
-        current = current->next;
-    }
+    // t_stack *current = *b;
+    // while (current)
+    // {
+    //     printf("%d\n", current->nbr);
+    //     current = current->next;
+    // }
 }
 
 void ft_pb(t_stack **a, t_stack **b, int _write_it)
@@ -47,10 +47,10 @@ void ft_pb(t_stack **a, t_stack **b, int _write_it)
     if (_write_it == 0)
         write(1, "pb\n", 3);
 
-    t_stack *current = *a;
-    while (current)
-    {
-        printf("%d\n", current->nbr);
-        current = current->next;
-    }
+    // t_stack *current = *a;
+    // while (current)
+    // {
+    //     printf("%d\n", current->nbr);
+    //     current = current->next;
+    // }
 }

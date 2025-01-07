@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:20:52 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/07 21:05:29 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/07 22:26:54 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ int ft_seconed_min(t_stack *stack, int min)
         stack = stack->next;
     }
 
-    printf("\nSecond min: %d\n", seconed_min);  // Debugging output
+   // printf("\nSecond min: %d\n", seconed_min);  // Debugging output
     return (seconed_min); 
 }
 
@@ -90,11 +90,12 @@ void ft_sort_five(t_stack **a, t_stack **b, size_t size_a)
     ft_sort_three(a);
     ft_pa(b, a, 0);
     ft_pa(b, a, 0);
-             t_stack *current = *b;
-            while (current)
-            {
-                printf("%d\n", current->nbr);
-                current = current->next;
-            }
+    
+    t_stack *current = *b;
+    while (current)
+    {
+        printf("%d\n", current->nbr);
+        current = current->next;
+    }
 }
 
