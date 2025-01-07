@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:58 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/06 22:31:21 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/07 21:04:24 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ int main(int argc, char **argv)
             else if (size_a == 5)
                 ft_sort_five(&a, &b, size_a);
          
-                
+          
+                    
         }
         //ft_free(&a);
        // ft_free(&b);

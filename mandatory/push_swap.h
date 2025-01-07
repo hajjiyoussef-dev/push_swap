@@ -44,6 +44,9 @@ int ft_mqadin(t_stack *a);
 // swap operiton 
 void ft_sa(t_stack **a, int _write_it);
 
+// push to a or b
+void ft_pa(t_stack **a , t_stack **b, int _write_it);
+void ft_pb(t_stack **a, t_stack **b, int _write_it);
 
 
 //rotate
@@ -51,9 +54,11 @@ void ft_sa(t_stack **a, int _write_it);
 void ft_ra(t_stack **a, int _write_it);
 
 
-// sort_three
-
+//sort_three
 void ft_sort_three(t_stack **a);
+
+//sort_five
+void ft_sort_five(t_stack **a, t_stack **b, size_t size_a);
 
 // reverse_rotate 
 void ft_rra(t_stack **a, int _write_it);
