@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:58 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/07 21:04:24 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/07 23:14:51 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ int main(int argc, char **argv)
                 ft_sort_three(&a);
             else if (size_a == 5)
                 ft_sort_five(&a, &b, size_a);
+            else if (size_a >= 4 && size_a != 5)
+                ft_kone_rajal(&a, &b, size_a);
          
           
                     
