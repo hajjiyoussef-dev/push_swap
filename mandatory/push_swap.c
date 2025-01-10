@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:58 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/07 23:14:51 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/10 02:42:55 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,17 @@
 //         ft_sa();
 // }
 
+
+void print_stack(t_stack *stack, char stack_name)
+{
+    printf("Stack %c: ", stack_name);
+    while (stack)
+    {
+        printf("%d ", stack->nbr);
+        stack = stack->next;
+    }
+    printf("\n");
+}
 
 int main(int argc, char **argv)
 {
@@ -42,9 +53,8 @@ int main(int argc, char **argv)
        // printf("%zu", size_a);
         b = NULL;
 
-        if (!ft_mqadin(a))
+        if (!ft_ale_sorted(a))
         {
-            // ft_stage_lwa7ch(&a, &b, size_a);
             if (size_a == 2)
                 ft_sa(&a, 0);
             else if (size_a == 3)
@@ -52,7 +62,13 @@ int main(int argc, char **argv)
             else if (size_a == 5)
                 ft_sort_five(&a, &b, size_a);
             else if (size_a >= 4 && size_a != 5)
-                ft_kone_rajal(&a, &b, size_a);
+            {
+                ft_divide_stack(&a, &b);
+                ft_big_sort(&a, &b, size_a);
+                
+                //print_stack(a, 'A');
+                //print_stack(b, 'B');
+            }
          
           
                     

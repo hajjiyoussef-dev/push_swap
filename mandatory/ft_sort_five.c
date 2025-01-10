@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:20:52 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/09 09:23:47 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/09 22:19:52 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,11 @@ void ft_sort_five(t_stack **a, t_stack **b, size_t size_a)
     ft_pa(b, a, 0);
     ft_pa(b, a, 0);
     
-    t_stack *current = *b;
-    while (current)
-    {
-        printf("%d\n", current->nbr);
-        current = current->next;
-    }
+    // t_stack *current = *b;
+    // while (current)
+    // {
+    //     printf("%d\n", current->nbr);
+    //     current = current->next;
+    // }
 }
 

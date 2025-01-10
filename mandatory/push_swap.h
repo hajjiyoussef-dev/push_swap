@@ -39,7 +39,12 @@ void ft_give_the_stack_index(t_stack **stack);
 
 // push_swap_help.c
 size_t ft_size(t_stack *a);
-int ft_mqadin(t_stack *a);
+int ft_ale_sorted(t_stack *a);
+void ft_divide_stack(t_stack **a, t_stack **b);
+
+// test printf the content od the stack 
+void print_stack(t_stack *stack, char stack_name);
+
 
 // swap operiton 
 void ft_sa(t_stack **a, int _write_it);

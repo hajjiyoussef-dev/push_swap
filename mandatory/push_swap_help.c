@@ -6,29 +6,13 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 16:21:22 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/04 19:08:13 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/10 00:56:20 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-size_t ft_size(t_stack *a)
-{
-    size_t i ;
-
-    i = 0;
-    if (!a)
-        ft_error();
-    while (a)
-    {
-        a = a->next;
-        i++;
-    }
-     return (i);  
-}
-
-int ft_mqadin(t_stack *a)
+int ft_ale_sorted(t_stack *a)
 {
     t_stack *help;
     size_t i;
@@ -51,3 +35,40 @@ int ft_mqadin(t_stack *a)
         return (1);
     return (0);
 }
+
+size_t ft_size(t_stack *a)
+{
+    size_t i ;
+
+    i = 0;
+    if (!a)
+        ft_error();
+    while (a)
+    {
+        a = a->next;
+        i++;
+    }
+     return (i);  
+}
+
+void ft_divide_stack(t_stack **a, t_stack **b)
+{
+    int i;
+    size_t size;
+
+    size = ft_size(*a);
+    while (size--)
+    {
+        ft_pb(a, b, 0);
+    }
+    i = 0;
+    while (i < 2)
+    {
+        ft_pa(a, b, 0);
+        i++;
+    }
+}
+
+
+
+
