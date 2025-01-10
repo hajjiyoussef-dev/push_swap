@@ -68,6 +68,9 @@ void ft_sort_five(t_stack **a, t_stack **b, size_t size_a);
 // reverse_rotate 
 void ft_rra(t_stack **a, int _write_it);
 
+// beging of the sort
+void ft_big_sort(t_stack **a, t_stack **b, size_t size_a);
+
 
 
 #endif
