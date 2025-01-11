@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 08:54:22 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/10 09:07:47 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/11 03:13:35 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void ft_looking_for_moves(t_stack *a, t_stack **b)
     while (help)
     {
         top = get_top(a, help);
+        help->moves = get_moves(a, b, help, top);
+        help = help->next;
     }
     
 }

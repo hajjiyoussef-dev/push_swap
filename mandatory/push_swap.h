@@ -59,17 +59,26 @@ void ft_pb(t_stack **a, t_stack **b, int _write_it);
 void ft_ra(t_stack **a, int _write_it);
 
 
+// reverse_rotate 
+void ft_rra(t_stack **a, int _write_it);
+
+
 //sort_three
 void ft_sort_three(t_stack **a);
 
 //sort_five
 void ft_sort_five(t_stack **a, t_stack **b, size_t size_a);
 
-// reverse_rotate 
-void ft_rra(t_stack **a, int _write_it);
 
 // beging of the sort
 void ft_big_sort(t_stack **a, t_stack **b, size_t size_a);
+
+// big sort help function 
+t_stack *min_nbr(t_stack *a);
+t_stack *max_nbr(t_stack *a);
+// index moves
+t_stack *get_moves(t_stack *a, t_stack *b, t_stack *help, t_stack *top);
+t_stack *get_top(t_stack *a, t_stack *help);
 
 
 
