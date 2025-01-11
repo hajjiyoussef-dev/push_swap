@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 02:55:29 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/11 03:05:35 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/11 09:24:53 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 t_stack *min_nbr(t_stack *a)
 {
     t_stack *help;
-    t_stack *min;
+    int     min;
 
-    min = a;
+    min = a->nbr;
     help = a;
     while (a)
     {
-        if (a->nbr < min->nbr)
+        if (a->nbr < min)
             min = a->nbr;
         a = a->next;
     }
@@ -36,14 +36,14 @@ t_stack *min_nbr(t_stack *a)
 
 t_stack *max_nbr(t_stack *a)
 {
-    t_stack *help;
-    t_stack *max;
+    t_stack     *help;
+    int         max;
 
-    max = a;
+    max = a->nbr;
     help = a;
     while (a)
     {
-        if (a->nbr > max->nbr)
+        if (a->nbr > max)
             max = a->nbr;
         a = a->next;
     }

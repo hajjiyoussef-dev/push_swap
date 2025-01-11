@@ -77,8 +77,9 @@ void ft_big_sort(t_stack **a, t_stack **b, size_t size_a);
 t_stack *min_nbr(t_stack *a);
 t_stack *max_nbr(t_stack *a);
 // index moves
-t_stack *get_moves(t_stack *a, t_stack *b, t_stack *help, t_stack *top);
+int get_moves(t_stack *a, t_stack *b, t_stack *help, t_stack *top);
 t_stack *get_top(t_stack *a, t_stack *help);
+
 
 
 
