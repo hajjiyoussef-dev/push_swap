@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 18:21:34 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/07 22:27:18 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/12 00:49:28 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,34 @@ void ft_rra(t_stack **a, int _write_it)
    
     if (_write_it == 0)
         write(1, "rra\n", 4);
+    //  t_stack *current = *a;
+    // while (current)
+    // {
+    //     printf("%d\n", current->nbr);
+    //     current = current->next;
+    // }
+}
+void ft_rrb(t_stack **b, int _write_it)
+{
+    ft_reverse_rotate(b);
+   
+    if (_write_it == 0)
+        write(1, "rrb\n", 4);
+    //  t_stack *current = *a;
+    // while (current)
+    // {
+    //     printf("%d\n", current->nbr);
+    //     current = current->next;
+    // }
+}
+
+void ft_rrr(t_stack **a, t_stack **b, int _write_it)
+{
+    ft_reverse_rotate(a);
+    ft_reverse_rotate(b);
+   
+    if (_write_it == 0)
+        write(1, "rrr\n", 4);
     //  t_stack *current = *a;
     // while (current)
     // {

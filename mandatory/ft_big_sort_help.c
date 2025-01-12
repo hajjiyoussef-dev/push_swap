@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 02:55:29 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/11 09:24:53 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/11 23:11:01 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,20 @@ t_stack *max_nbr(t_stack *a)
         help =  help->next;
     }
     return (NULL);
+}
+
+t_stack *ft_best_elem(t_stack **stack)
+{
+    t_stack *best;
+    t_stack *help;
+
+    help = *stack;
+    best = *stack;
+    while (help)
+    {
+        if (help->moves < best->moves)
+            best =  help;
+        help =  help->next;
+    }
+    return (best);
 }

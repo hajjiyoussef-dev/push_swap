@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:46:27 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/10 00:46:17 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/12 02:31:19 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ void ft_pa(t_stack **a , t_stack **b, int _write_it)
 {
     ft_push(b, a);
    
-    print_stack(*b, 'B');
-    print_stack(*a, 'A');
+   // print_stack(*b, 'B');
+   // print_stack(*a, 'A');
     if (_write_it == 0)
         write(1, "pa\n", 3);
     // t_stack *current = *b;
@@ -61,8 +61,8 @@ void ft_pa(t_stack **a , t_stack **b, int _write_it)
 void ft_pb(t_stack **a, t_stack **b, int _write_it)
 {
     ft_push(a, b);
-     print_stack(*a, 'A');
-     print_stack(*b, 'B');
+    // print_stack(*a, 'A');
+    // print_stack(*b, 'B');
     if (_write_it == 0)
         write(1, "pb\n", 3);
 
