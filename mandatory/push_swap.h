@@ -57,6 +57,8 @@ void ft_pb(t_stack **a, t_stack **b, int _write_it);
 //rotate
 //void ft_rotate(t_stack **stack);
 void ft_ra(t_stack **a, int _write_it);
+void ft_rb(t_stack **b, int _write_it);
+void ft_rr(t_stack **a,t_stack **b, int _write_it);
 
 
 // reverse_rotate 
@@ -78,13 +80,21 @@ void ft_big_sort(t_stack **a, t_stack **b, size_t size_a);
 // big sort help function 
 t_stack *min_nbr(t_stack *a);
 t_stack *max_nbr(t_stack *a);
-t_stack *ft_best_elem(t_stack **stack);
+t_stack	*ft_best_elem(t_stack *s);
+int get_max(int a, int b);
 
 // index moves
 int get_moves(t_stack *a, t_stack *b, t_stack *help, t_stack *top);
 t_stack *get_top(t_stack *a, t_stack *help);
 
+// move type
+void two_up(t_stack **a, t_stack **b, t_stack *top, t_stack *best);
+void two_down(t_stack **a, t_stack **b, t_stack *top, t_stack *best);
+void up_down(t_stack **a, t_stack **b, t_stack *top, t_stack *best);
+void down_up(t_stack **a, t_stack **b, t_stack *top, t_stack *best);
 
 
+void ft_final_sort(t_stack **a, t_stack *min_nbr, size_t pos, size_t size_a);
+int ft_check_min_position(t_stack *a, int min_nbr);
 
 #endif

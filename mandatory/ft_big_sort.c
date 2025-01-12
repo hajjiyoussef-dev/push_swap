@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 08:54:22 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/11 23:36:37 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/12 08:56:08 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int get_type(t_stack *a, t_stack *b, t_stack *top, t_stack *best)
     
     two_up = get_max(top->index, best->index);
     two_down = get_max((ft_size(a) - top->index),(ft_size(b) - best->index));
-    up_down = top->index + (ft_size(b) - top->index);
+    up_down = top->index + (ft_size(b) - best->index);
     down_up = best->index + (ft_size(a) - top->index);
     return (ft_get_best_type(two_up, two_down, up_down, down_up));
 }
@@ -78,7 +78,9 @@ void ft_push_b_to_a(t_stack **a, t_stack **b)
 
 void ft_big_sort(t_stack **a, t_stack **b, size_t size_a)
 {
-    size_t size_b;
+    size_t      size_b;
+    t_stack     *min;
+    size_t pos;
     
     size_b = ft_size(*b);
     while (size_b--)
@@ -86,12 +88,18 @@ void ft_big_sort(t_stack **a, t_stack **b, size_t size_a)
         ft_looking_for_moves(*a, b);
         ft_push_b_to_a(a, b);
     }
-//     size_a = size_a + 1;
-//    t_stack *current = *b;
-//     while (current)
-//     {
-//         printf("Number: %d, Moves: %d\n", current->nbr, current->moves);
-//         current = current->next;
-//     }
+    min = min_nbr(*a);
+    pos = ft_check_min_position(*a, min->nbr);
+    ft_final_sort(a, min, pos , size_a);
+
+    
+    
+    // size_a = size_a + 1;
+   t_stack *current = *a;
+    while (current)
+    {
+        printf("Number: [%d], Moves:", current->nbr);
+        current = current->next;
+    }
     
 }

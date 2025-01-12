@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 02:55:29 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/11 23:11:01 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/12 08:37:37 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,40 @@ t_stack *max_nbr(t_stack *a)
     return (NULL);
 }
 
-t_stack *ft_best_elem(t_stack **stack)
-{
-    t_stack *best;
-    t_stack *help;
+// t_stack *ft_best_elem(t_stack **stack) // her ???
+// {
+//     t_stack *best;
+//     t_stack *help;
 
-    help = *stack;
-    best = *stack;
-    while (help)
-    {
-        if (help->moves < best->moves)
-            best =  help;
-        help =  help->next;
-    }
-    return (best);
+//     help = *stack;
+//     best = *stack;
+//     while (help)
+//     {
+//         if (help->moves < best->moves)
+//             best =  help;
+//         help =  help->next;
+//     }
+//     return (best);
+// }
+t_stack	*ft_best_elem(t_stack *s)
+{
+	t_stack	*tmp;
+	int		min;
+
+	min = s->moves;
+	tmp = s;
+	while (s)
+	{
+		if (s->moves < min)
+			min = s->moves;
+		s = s->next;
+	}
+	s = tmp;
+	while (s)
+	{
+		if (s->moves == min)
+			return (s);
+		s = s->next;
+	}
+	return (NULL);
 }

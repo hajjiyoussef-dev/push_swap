@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 09:11:42 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/11 09:40:59 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/12 08:53:48 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int get_best_move(int a, int b, int c, int d)
     if (c <= a && c <= b && c <= d)
         return (c);
     if (d <= a && d <= b && d <= c)
-        return (c);
+        return (d);
     return (0);
 }
 
@@ -42,7 +42,7 @@ int get_moves(t_stack *a, t_stack *b, t_stack *help, t_stack *top)
 
     two_up = get_max(top->index, help->index); // ra && rb
     two_down = get_max((ft_size(a) - help->index), (ft_size(b) - top->index)); // rra && rrb
-    up_down = top->index + (ft_size(b) - top->index); // ra && rrb
+    up_down = top->index + (ft_size(b) - help->index); // ra && rrb
     down_up = help->index + (ft_size(a) - top->index); //rra && ra
     return(get_best_move(two_up, two_down, up_down, down_up));
 }
