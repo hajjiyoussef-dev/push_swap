@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:33:48 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 06:44:25 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/13 08:57:13 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
                 free(&a);
                 break;
             }
-            ft_check_typeof_move(&line);
+            ft_check_typeof_move(&a, &b, &line);
             free(line);
         }
         

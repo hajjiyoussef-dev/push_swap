@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:00:51 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 06:38:26 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/13 08:55:53 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,5 +47,7 @@ t_stack *ft_new_stack(int content);
 t_stack *ft_lst_last(t_stack *lst);
 void ft_lst_add_back(t_stack **stack, t_stack *new_stack);
 int ft_check_if_dup(t_stack *a);
+
+int ft_strcmp(char *str1, char *str2);
 
 #endif
