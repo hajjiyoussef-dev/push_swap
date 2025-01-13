@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/12 04:26:08 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/12 09:05:21 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/12 09:53:05 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,21 +43,30 @@ int ft_check_min_position(t_stack *a, int min_nbr)
 
 void ft_final_sort(t_stack **a, t_stack *min_nbr, size_t pos , size_t size_a)
 {
-    size_a = ft_size(*a);
+     size_a = ft_size(*a);
     
-    if (pos <= (size_a / 2))
-    {
-        while ((*a)->nbr != min_nbr->nbr)
-        {
-            ft_ra(a, 0);
-        }
-    }
-    else
-    {
-        while ((*a)->nbr != min_nbr->nbr)
-        {
-             ft_rra(a, 0);
-        }
+    // if (pos <= (size_a / 2))
+    // {
+    //     while ((*a)->nbr != min_nbr->nbr)
+    //     {
+    //         ft_ra(a, 0);
+    //     }
+    // }
+    // else
+    // {
+    //     while ((*a)->nbr != min_nbr->nbr)
+    //     {
+    //          ft_rra(a, 0);
+    //     }
         
-    }
+    // }
+    while (1)
+	{
+		if ((*a)->nbr == min_nbr->nbr)
+			break ;
+		if (pos == 0)
+			ft_rra(a, 0);
+		if (pos == 1)
+			ft_ra(a, 0);
+	}
 }

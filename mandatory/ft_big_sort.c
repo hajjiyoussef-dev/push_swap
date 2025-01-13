@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 08:54:22 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/12 08:56:08 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/12 10:08:11 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_get_best_type(int a, int b, int c, int d)
 {
-     if (a <= b && a <= c && a <= d)
+    if (a <= b && a <= c && a <= d)
         return (1);
     if (b <= a && b <= c && b <= d)
         return (2);
@@ -94,12 +94,12 @@ void ft_big_sort(t_stack **a, t_stack **b, size_t size_a)
 
     
     
-    // size_a = size_a + 1;
-   t_stack *current = *a;
-    while (current)
-    {
-        printf("Number: [%d], Moves:", current->nbr);
-        current = current->next;
-    }
+//     size_a = size_a + 1;
+//    t_stack *current = *a;
+//     while (current)
+//     {
+//         printf("Number: [%d], Moves:", current->nbr);
+//         current = current->next;
+//     }
     
 }

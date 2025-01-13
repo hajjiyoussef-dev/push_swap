@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 16:21:22 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/10 00:56:20 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/13 02:59:17 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ size_t ft_size(t_stack *a)
         ft_error();
     while (a)
     {
-        a = a->next;
         i++;
+        a = a->next;
     }
      return (i);  
 }

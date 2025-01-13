@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 09:11:42 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/12 08:53:48 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/13 03:08:41 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int get_moves(t_stack *a, t_stack *b, t_stack *help, t_stack *top)
 	int	down_up;
 
     two_up = get_max(top->index, help->index); // ra && rb
-    two_down = get_max((ft_size(a) - help->index), (ft_size(b) - top->index)); // rra && rrb
+    two_down = get_max((ft_size(a) - top->index), (ft_size(b) - help->index)); // rra && rrb
     up_down = top->index + (ft_size(b) - help->index); // ra && rrb
     down_up = help->index + (ft_size(a) - top->index); //rra && ra
     return(get_best_move(two_up, two_down, up_down, down_up));

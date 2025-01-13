@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   parsing_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/03 19:49:56 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 05:56:37 by yhajji           ###   ########.fr       */
+/*   Created: 2025/01/13 05:54:10 by yhajji            #+#    #+#             */
+/*   Updated: 2025/01/13 06:16:34 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	ft_free_tab(char **tab)
 {
@@ -70,10 +70,10 @@ t_stack *ft_filling_a(int argc, char **argv)
     if (!(ft_argv_empty(argv)))   
         ft_error();
     a = NULL;
-    s = ft_strjoin(argc - 1, argv + 1, " "); // joine all the argemment withe space between theme !!
+    s = ft_strjoin_checker(argc - 1, argv + 1, " "); // joine all the argemment withe space between theme !!
     if (!s)
         ft_error();
-    str = ft_split(s, ' '); // splite all the agremment withe the sepa space ??
+    str = ft_split_checker(s, ' '); // splite all the agremment withe the sepa space ??
     if (!str)
         (free(s), ft_error());
     i = -1;
