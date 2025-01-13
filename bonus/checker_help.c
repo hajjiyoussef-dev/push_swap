@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:47:45 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 11:40:59 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/13 23:27:11 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,32 +61,32 @@ int ft_ale_sorted(t_stack *a)
 void ft_check_typeof_move(t_stack **a, t_stack **b, char *line)
 {
     if (ft_strcmp(line, "sa\n") == 0)
-        ft_sa(a, 0);
+        ft_sa(a, 1);
     else if (ft_strcmp(line, "sb\n") == 0)
-        ft_sb(b, 0);
+        ft_sb(b, 1);
     else if (ft_strcmp(line, "ss\n") == 0)
-        ft_ss(a, b, 0);
+        ft_ss(a, b, 1);
     else if (ft_strcmp(line, "ra\n") == 0)
-        ft_ra(a, 0);
+        ft_ra(a, 1);
     else if (ft_strcmp(line, "rb\n") == 0)
-        ft_rb(b, 0);
+        ft_rb(b, 1);
     else if (ft_strcmp(line, "rr\n") == 0)
-        ft_rr(a, b, 0);
+        ft_rr(a, b, 1);
     else if (ft_strcmp(line, "rra\n") == 0)
-        ft_rra(a, 0);
+        ft_rra(a, 1);
     else if (ft_strcmp(line, "rrb\n") == 0)
-        ft_rrb(b, 0);
+        ft_rrb(b, 1);
     else if (ft_strcmp(line, "rrr\n") == 0)
-        ft_rrr(a, b, 0);
+        ft_rrr(a, b, 1);
     else if (ft_strcmp(line, "pa\n") == 0)
-        ft_pa(a, b, 0);
+        ft_pa(a, b, 1);
     else if (ft_strcmp(line, "pb\n") == 0)
-        ft_pb(a, b, 0);
+        ft_pb(a, b, 1);
 }
 
 bool b_is_empty(t_stack *b)
 {
-    return (b = NULL);
+    return (b == NULL);
 }
 
 
