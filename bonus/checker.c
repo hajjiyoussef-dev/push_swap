@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:33:48 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 08:57:13 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/13 11:42:39 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,13 @@ int main(int argc, char **argv)
             line = get_next_line(0);
             if (!line)
             {
-                free(&a);
+                free(a);
                 break;
             }
-            ft_check_typeof_move(&a, &b, &line);
+            ft_check_typeof_move(&a, &b, line);
             free(line);
         }
-        
-        
+        ft_check_sort(&a, &b);
     }
     
 }

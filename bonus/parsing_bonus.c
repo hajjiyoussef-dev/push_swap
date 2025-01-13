@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 05:54:10 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 06:16:34 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/13 11:47:30 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,6 @@ t_stack *ft_filling_a(int argc, char **argv)
     }
     free(s);
     ft_free_tab(str);
-    ft_give_the_stack_index(&a);
+   // ft_give_the_stack_index(&a);
     return(a);    
 }
