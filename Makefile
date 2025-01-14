@@ -15,7 +15,7 @@ SRC_BON = ./bonus/checker_help.c ./bonus/checker.c ./bonus/ft_atoi_checker.c ./b
 
 OBJS = ${SRC:.c=.o}
 BON_OBJS = ${SRC_BON:.c=.o}
-CC = cc  -fsanitize=address
+CC = cc  
 CFLAGS = -Wall -Wextra -Werror  
 AR = ar -rc
 RM = rm -rf
@@ -25,21 +25,21 @@ RM = rm -rf
 	${CC} ${CFLAGS} -c $<  -o $@
 
 ${NAME}: ${OBJS}
-		@${CC} ${CFLAGS} -o ${NAME} ${OBJS}
+		${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
 
 ${NAME_B}: ${BON_OBJS}
-		@${CC} ${CFLAGS} -o ${NAME_B} ${BON_OBJS}
+		${CC} ${CFLAGS} -o ${NAME_B} ${BON_OBJS}
 
 all: ${NAME}
 
 bonus: ${NAME_B}
 
 clean:
-	@${RM} ${OBJS} ${BON_OBJS}
+	${RM} ${OBJS} ${BON_OBJS}
 	
 fclean : clean
-	@${RM} ${NAME} ${NAME_B}
+	${RM} ${NAME} ${NAME_B}
 
 re :  fclean all 
 
