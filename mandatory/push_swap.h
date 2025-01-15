@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 05:59:55 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 06:00:07 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/14 11:17:00 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_strjoin(int size, char **strs, char *sep);
 void ft_error(void);
 //void ft_error(char *str);
 char	**ft_split(char const *s, char c);
-int	ft_atoi(const char *str);
+int	ft_atoi(const char *str, t_stack **a);
 
 //lists
 void ft_free(t_stack **lst);

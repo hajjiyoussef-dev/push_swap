@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:49:56 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 05:56:37 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/14 11:16:35 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_stack *ft_filling_a(int argc, char **argv)
     i = -1;
     while (str[++i])
     {
-        num =  ft_atoi(str[i]);
+        num =  ft_atoi(str[i], &a);
         ft_lst_add_back(&a, ft_new_stack(num));
     }
     free(s);

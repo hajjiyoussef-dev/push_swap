@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 22:06:59 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/14 09:54:59 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/14 11:23:14 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static	int	ft_isdigit(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *str, t_stack **a)
 {
 	int		i;
 	int		sn;
@@ -37,17 +37,16 @@ int	ft_atoi(const char *str)
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
+		{
+			if (a)
+				ft_free(a);
 			ft_error();
+		}
 		if ((num > (2147483647 / 10) || (num == 2147483647 / 10 && (str[i] - '0') > 7)) ||
 		 (sn == -1 && num == 2147483647 / 10 && (str[i] - '0') == 8))
 			ft_error();
 		num = (str[i] - 48) + (num * 10);
 		i++;
 	}
-	num *= sn;
-	return (num);
-
-
-
-	
+	return (num * sn);
 }
