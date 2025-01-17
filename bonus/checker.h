@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:00:51 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 11:48:05 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/17 03:33:20 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,14 @@
 typedef struct s_stack
 {
     int nbr;
-    int index;
-    int moves ;
     struct s_stack *next ;
 }   t_stack ;
+
+typedef struct s_move
+{
+    char *data;
+    struct s_move *next;
+}   t_move;
 
 void ft_error(void);
 

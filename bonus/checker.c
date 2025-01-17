@@ -6,17 +6,32 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:33:48 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 23:25:44 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/17 08:07:45 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
+t_stack *ft_new_stack(char *content)
+{
+    t_move *new;
+
+    new = malloc(sizeof(t_move));
+    if (!new)
+    {
+        ft_free(&new);
+        ft_error();
+    }
+    new->data = content;
+    new->next = NULL;
+    return (new);
+}
+
 int main(int argc, char **argv)
 {
     t_stack *a;
     t_stack *b;
-    char *line;
+    t_move *line;
 
     if (argc > 1)
     {
@@ -29,7 +44,10 @@ int main(int argc, char **argv)
         b = NULL;
         while (1)
         {
-            line = get_next_line(0);
+            while (get_next_line(0) != NULL)
+            {
+                ft_lst_add_back(line, ft_new_stack(get_next_line(0)));
+            }
             if (!line)
             {
                 free(line);
@@ -40,5 +58,4 @@ int main(int argc, char **argv)
         }
         ft_check_sort(&a, &b);
     }
-    
 }
