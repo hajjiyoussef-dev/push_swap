@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:33:48 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/17 08:07:45 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/17 08:29:42 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 {
     t_stack *a;
     t_stack *b;
-    t_move *line;
+    t_move *moves;
 
     if (argc > 1)
     {
@@ -46,15 +46,14 @@ int main(int argc, char **argv)
         {
             while (get_next_line(0) != NULL)
             {
-                ft_lst_add_back(line, ft_new_stack(get_next_line(0)));
+                ft_lst_add_back(moves, ft_new_stack(get_next_line(0)));
             }
-            if (!line)
+            if (!moves)
             {
-                free(line);
+                ft_free(&moves);
                 break;
             }
-            ft_check_typeof_move(&a, &b, line);
-            free(line);
+            ft_check_typeof_move(&a, &b, moves);
         }
         ft_check_sort(&a, &b);
     }
