@@ -10,7 +10,7 @@ SRC = ./mandatory/push_swap.c ./mandatory/push_swap_help.c ./mandatory/parsing.c
 		
 SRC_BON = ./bonus/checker_help.c ./bonus/checker.c ./bonus/ft_atoi_checker.c ./bonus/ft_lsts_checker.c \
 			./bonus/ft_push_checker.c ./bonus/ft_reverse_rotate_checker.c ./bonus/ft_rotate_checker.c \
-			./bonus/ft_split_checker.c ./bonus/ft_strcmp.c ./bonus/ft_strjoin_checker.c ./bonus/ft_swap_checker.c\
+			./bonus/ft_split_checker.c ./bonus/ft_strncmp.c ./bonus/ft_strjoin_checker.c ./bonus/ft_swap_checker.c\
 			./bonus/get_next_line_bouns.c ./bonus/get_next_line_help_bouns.c ./bonus/parsing_bonus.c ./bonus/ft_error_checker.c
 
 OBJS = ${SRC:.c=.o}

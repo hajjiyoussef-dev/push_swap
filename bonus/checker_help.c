@@ -6,13 +6,13 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:47:45 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 23:27:11 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/18 02:22:19 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-size_t ft_size(t_stack *a)
+size_t ft_size_stack_a(t_stack *a)
 {
     size_t i ;
 
@@ -37,7 +37,7 @@ int ft_ale_sorted(t_stack *a)
     size_t size;
     
     i = 1;
-    size = ft_size(a);
+    size = ft_size_stack_a(a);
     if (!a)
     {
         write(1, "KO\n", 3);
@@ -53,55 +53,62 @@ int ft_ale_sorted(t_stack *a)
         a = a->next;
     }
     if (size == i)
-        return (1);
-    return (0);
+        return (0);
+    return (1);
 }
 
 
 void ft_check_typeof_move(t_stack **a, t_stack **b, char *line)
 {
-    if (ft_strcmp(line, "sa\n") == 0)
+    if (ft_strncmp(line, "sa\n", 3) == 0)
         ft_sa(a, 1);
-    else if (ft_strcmp(line, "sb\n") == 0)
+    else if (ft_strncmp(line, "sb\n", 3) == 0)
         ft_sb(b, 1);
-    else if (ft_strcmp(line, "ss\n") == 0)
+    else if (ft_strncmp(line, "ss\n", 3) == 0)
         ft_ss(a, b, 1);
-    else if (ft_strcmp(line, "ra\n") == 0)
+    else if (ft_strncmp(line, "ra\n", 3) == 0)
         ft_ra(a, 1);
-    else if (ft_strcmp(line, "rb\n") == 0)
+    else if (ft_strncmp(line, "rb\n", 3) == 0)
         ft_rb(b, 1);
-    else if (ft_strcmp(line, "rr\n") == 0)
+    else if (ft_strncmp(line, "rr\n", 3) == 0)
         ft_rr(a, b, 1);
-    else if (ft_strcmp(line, "rra\n") == 0)
+    else if (ft_strncmp(line, "rra\n", 4) == 0)
         ft_rra(a, 1);
-    else if (ft_strcmp(line, "rrb\n") == 0)
+    else if (ft_strncmp(line, "rrb\n", 4) == 0)
         ft_rrb(b, 1);
-    else if (ft_strcmp(line, "rrr\n") == 0)
+    else if (ft_strncmp(line, "rrr\n", 4) == 0)
         ft_rrr(a, b, 1);
-    else if (ft_strcmp(line, "pa\n") == 0)
+    else if (ft_strncmp(line, "pa\n", 3) == 0)
         ft_pa(a, b, 1);
-    else if (ft_strcmp(line, "pb\n") == 0)
+    else if (ft_strncmp(line, "pb\n", 3) == 0)
         ft_pb(a, b, 1);
 }
-
-bool b_is_empty(t_stack *b)
+size_t ft_size_stack_b(t_stack *b)
 {
-    return (b == NULL);
-}
+    size_t i ;
 
-
-void ft_check_sort(t_stack **a, t_stack **b)
-{
-    if (ft_ale_sorted(*a) && b_is_empty(*b))
+    i = 0;
+    while (b != NULL)
     {
-        write(1, "OK\n", 3);
-        ft_free(a);
+        i++;
+        b = b->next;
+    }
+     return (i);  
+}
+int ft_check_sort(t_stack **a, t_stack **b)
+{
+    if (!ft_ale_sorted(*a) && ft_size_stack_b(*b) == 0)
+    {
+        // write(1, "OK\n", 3);
+        // ft_free(a);
+        return (0);
     }
     else
     {
-        write(1, "KO\n", 3);
-        ft_free(a);
-        if (*b)
-            ft_free(b);
+        // write(1, "KO\n", 3);
+        // ft_free(a);
+        // if (*b)
+        //     ft_free(b);
+        return (1);
     }
 }
