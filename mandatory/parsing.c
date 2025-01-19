@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:49:56 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/14 11:16:35 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/19 05:10:51 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,16 @@ t_stack *ft_filling_a(int argc, char **argv)
     s = ft_strjoin(argc - 1, argv + 1, " "); // joine all the argemment withe space between theme !!
     if (!s)
         ft_error();
-    str = ft_split(s, ' '); // splite all the agremment withe the sepa space ??
+    str = ft_split(s, ' ');// splite all the agremment withe the sepa space ??
+    free(s); 
     if (!str)
         (free(s), ft_error());
     i = -1;
     while (str[++i])
     {
-        num =  ft_atoi(str[i], &a);
+        num =  ft_atoi(str[i], &a, str);
         ft_lst_add_back(&a, ft_new_stack(num));
     }
-    free(s);
     ft_free_tab(str);
     ft_give_the_stack_index(&a);
     return(a);    

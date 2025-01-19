@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 05:59:55 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/14 11:17:00 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/19 05:09:54 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,10 @@ int ft_argv_empty(char **argv);
 int ft_is_space(char *argv);
 char	*ft_strjoin(int size, char **strs, char *sep);
 void ft_error(void);
+void	ft_free_tab(char **tab);
 //void ft_error(char *str);
 char	**ft_split(char const *s, char c);
-int	ft_atoi(const char *str, t_stack **a);
+int	ft_atoi(const char *str, t_stack **a, char **allstr);
 
 //lists
 void ft_free(t_stack **lst);
@@ -55,7 +56,7 @@ int ft_ale_sorted(t_stack *a);
 void ft_divide_stack(t_stack **a, t_stack **b);
 
 // test printf the content od the stack 
-void print_stack(t_stack *stack, char stack_name);
+// void print_stack(t_stack *stack, char stack_name);
 
 
 // swap operiton 

@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:50 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/04 12:30:52 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/19 05:04:06 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,13 @@ char	*mallocat_it(int size, char **strs, char *sep)
 	while (i < size)
 	{
 		len = len + ft_strlen(strs[i]);
-		if (i < size + 1)
+		if (i < size - 1)
 			len = len + ft_strlen(sep);
 		i++;
 	}
 	join = malloc(len + 1);
 	if (join == NULL)
-		return (NULL);
+		return (free(join), NULL);
 	join[0] = '\0';
 	return (join);
 }

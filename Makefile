@@ -16,7 +16,7 @@ SRC_BON = ./bonus/checker_help.c ./bonus/checker.c ./bonus/ft_atoi_checker.c ./b
 OBJS = ${SRC:.c=.o}
 BON_OBJS = ${SRC_BON:.c=.o}
 CC = cc  
-CFLAGS = -Wall -Wextra -Werror  
+CFLAGS = -Wall -Wextra -Werror
 AR = ar -rc
 RM = rm -rf
 

@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 08:54:22 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/12 10:08:11 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/18 12:13:21 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,7 @@ void ft_looking_for_moves(t_stack *a, t_stack **b)
         top = get_top(a, help);
         help->moves = get_moves(a, *b, help, top) + 1;
         
-       // printf("For number %d in Stack B, moves: %d\n", help->nbr, help->moves);
-        
+    
         help = help->next;
     }
     

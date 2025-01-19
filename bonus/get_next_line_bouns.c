@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:06:37 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 06:10:39 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/19 09:13:47 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,12 +70,19 @@ static char	*read_end_find(int fd, char *buff, char *res)
 	return (res);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int cleanup)
 {
 	static char	*res;
 	char		*buff;
 	char		*line;
 
+	if (cleanup)
+    {
+        if (res)
+            free(res);
+        res = NULL;
+        return (NULL);
+    }
 	if (BUFFER_SIZE <= 0 || BUFFER_SIZE > INT_MAX || read(fd, 0, 0) < 0)
     {
         if (res)

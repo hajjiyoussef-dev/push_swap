@@ -6,11 +6,12 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:19:01 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 06:19:54 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/19 08:24:04 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
+
 
 static	int	ft_isdigit(int c)
 {
@@ -19,7 +20,28 @@ static	int	ft_isdigit(int c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int help_atoi(int num, const char *str, t_stack **a, char **allstr, int sn, int i)
+{
+	
+	if (!ft_isdigit(str[i]))
+	{
+		if (a)
+			ft_free(a);
+		(ft_free_tab(allstr), ft_error());
+	}
+	if ((num > (2147483647 / 10) || (num == 2147483647 / 10 && (str[i] - '0') > 7)) ||
+		(sn == -1 && num == 2147483647 / 10 && (str[i] - '0') == 8))
+	{
+		if (a)
+			ft_free(a);
+		(ft_free_tab(allstr), ft_error());
+	}
+	num = (str[i] - 48) + (num * 10);
+	return (num);
+	
+}
+
+int	ft_atoi(const char *str, t_stack **a, char **allstr)
 {
 	int		i;
 	int		sn;
@@ -35,14 +57,8 @@ int	ft_atoi(const char *str)
 		i++;
 	while (str[i])
 	{
-		if (!ft_isdigit(str[i]))
-			ft_error();
-		if ((num > (2147483647 / 10) || (num == 2147483647 / 10 && (str[i] - '0') > 7)) ||
-		 (sn == -1 && num == 2147483647 / 10 && (str[i] - '0') == 8))
-			ft_error();
-		num = (str[i] - 48) + (num * 10);
+		num = help_atoi(num, str, a, allstr, sn, i);
 		i++;
 	}
-	num *= sn;
-	return (num);
+	return (num * sn);
 }

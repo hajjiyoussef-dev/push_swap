@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 05:54:10 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 11:47:30 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/19 08:45:37 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,15 @@ t_stack *ft_filling_a(int argc, char **argv)
     if (!s)
         ft_error();
     str = ft_split_checker(s, ' '); // splite all the agremment withe the sepa space ??
+    free(s); 
     if (!str)
         (free(s), ft_error());
     i = -1;
     while (str[++i])
     {
-        num =  ft_atoi(str[i]);
+        num =  ft_atoi(str[i], &a, str);
         ft_lst_add_back(&a, ft_new_stack(num));
     }
-    free(s);
     ft_free_tab(str);
-   // ft_give_the_stack_index(&a);
     return(a);    
 }

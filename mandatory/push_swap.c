@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:58 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 03:38:52 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/19 02:00:26 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,18 @@ void    ft_sort(t_stack **a, t_stack **b, size_t size_a)
 //     printf("\n");
 // }
 
+void v()
+{
+    system("valgrind ./push_swap");
+}
+
 int main(int argc, char **argv)
 {
     t_stack *a;
     size_t size_a;
     t_stack *b;
 
+    // atexit(v);
     size_a =  0;
     if (argc > 1)
     {
@@ -62,7 +68,14 @@ int main(int argc, char **argv)
 
         if (!ft_ale_sorted(a))
         {
-               ft_sort(&a, &b, size_a);   
+            // if (!ft_sort(&a, &b, size_a))
+            // {
+            //     // Handle sorting errors (e.g., memory allocation failures)
+            //     ft_free(&a);
+            //     ft_free(&b);
+            //     ft_error();
+            // }
+            ft_sort(&a, &b, size_a);   
         }
         ft_free(&a);
         ft_free(&b);

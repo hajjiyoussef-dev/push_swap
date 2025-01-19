@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:33:48 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/18 10:54:27 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/19 09:14:42 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,6 +124,8 @@ int main(int argc, char **argv)
     t_move *moves;
     char *one_move;
 
+    if (argc <= 1)
+        return (1);
     if (argc > 1)
     {
         a = ft_filling_a(argc, argv);
@@ -133,27 +135,38 @@ int main(int argc, char **argv)
         }
         b = NULL;
         moves = NULL;
-        one_move = get_next_line(0);
+        one_move = get_next_line(0, 0);
         while (one_move)
         {
             if (!one_move)
                 break;
             if (!check_move(one_move))  
             {
+                get_next_line(0, 1);
                 if (moves != NULL)
                     ft_clear_move(&moves);
-                (ft_free(&a), ft_error());
+                ft_free(&a);
+                free(one_move);
+                ft_error();
             }
             ft_lst_add_back_move(&moves, ft_new_stack_moves(one_move));
-            one_move  = get_next_line(0);
+            free(one_move);
+            one_move  = get_next_line(0, 0);
         }
+        
         ft_do_the_moves(&a, &b, &moves);
         if (!ft_check_sort(&a, &b))
+        {
+            ft_free(&b); // Free the second stack
+            ft_clear_move(&moves); // Free the moves list
             ft_free_and_exit(&a, "OK\n");
-        else 
+        }
+        else
+        {
+            ft_free(&b);
+            ft_clear_move(&moves);
             ft_free_and_exit(&a, "KO\n");
-
+        }
         return (0); 
-       // ft_check_sort(&a, &b);
     }
 }
