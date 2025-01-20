@@ -12,20 +12,18 @@
 
 #include "push_swap.h"
 
-
-void ft_sa(t_stack **a, int _write_it)
+void	ft_sa(t_stack **a, int _write_it)
 {
-    int n;
+	int	n;
 
-    if (!(*a) || !((*a)->next))
-        return;
-    n = (*a)->nbr;
-    (*a)->nbr =  (*a)->next->nbr;
-    (*a)->next->nbr = n ;
-    
-    if (_write_it == 0)
-        write(1, "sa\n", 3);
-    ft_give_the_stack_index(&(*a));
+	if (!(*a) || !((*a)->next))
+		return ;
+	n = (*a)->nbr;
+	(*a)->nbr = (*a)->next->nbr;
+	(*a)->next->nbr = n;
+	if (_write_it == 0)
+		write(1, "sa\n", 3);
+	ft_give_the_stack_index(&(*a));
 }
 
 // void ft_ra(t_stack *a, int _write_it)
@@ -39,13 +37,11 @@ void ft_sa(t_stack **a, int _write_it)
 //     a = a->next;
 
 //     last = a;
-    
+
 //     while (last->next)
 //         last = last->next;
-    
+
 //     last->next = first;
 //     first->next = NULL;
-    
 
-    
 // }

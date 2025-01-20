@@ -12,66 +12,57 @@
 
 #include "push_swap.h"
 
-
-
-void ft_rotate(t_stack **stack_a)
+void	ft_rotate(t_stack **stack_a)
 {
-    t_stack *first;
-    t_stack *last;
-    
-    if (!(*stack_a) || !(*stack_a)->next)
-        return;
+	t_stack	*first;
+	t_stack	*last;
 
-    first = *stack_a;
-    *stack_a = first->next;  
-    last = ft_lst_last(*stack_a);  
-    first->next = NULL;  
-    last->next = first;  
-    ft_give_the_stack_index(stack_a); 
+	if (!(*stack_a) || !(*stack_a)->next)
+		return ;
+	first = *stack_a;
+	*stack_a = first->next;
+	last = ft_lst_last(*stack_a);
+	first->next = NULL;
+	last->next = first;
+	ft_give_the_stack_index(stack_a);
 }
 
-
-void ft_ra(t_stack **a, int _write_it)
+void	ft_ra(t_stack **a, int _write_it)
 {
-    ft_rotate(a);
-   
-    if (_write_it == 0)
-        write(1, "ra\n", 3);
-    //  t_stack *current = *a;
-    // while (current)
-    // {
-    //     printf("%d\n", current->nbr);
-    //     current = current->next;
-    // }
+	ft_rotate(a);
+	if (_write_it == 0)
+		write(1, "ra\n", 3);
+	//  t_stack *current = *a;
+	// while (current)
+	// {
+	//     printf("%d\n", current->nbr);
+	//     current = current->next;
+	// }
 }
 
-void ft_rb(t_stack **b, int _write_it)
+void	ft_rb(t_stack **b, int _write_it)
 {
-    ft_rotate(b);
-   
-    if (_write_it == 0)
-        write(1, "rb\n", 3);
-    //  t_stack *current = *a;
-    // while (current)
-    // {
-    //     printf("%d\n", current->nbr);
-    //     current = current->next;
-    // }
+	ft_rotate(b);
+	if (_write_it == 0)
+		write(1, "rb\n", 3);
+	//  t_stack *current = *a;
+	// while (current)
+	// {
+	//     printf("%d\n", current->nbr);
+	//     current = current->next;
+	// }
 }
 
-void ft_rr(t_stack **a,t_stack **b, int _write_it)
+void	ft_rr(t_stack **a, t_stack **b, int _write_it)
 {
-    ft_rotate(a);
-    ft_rotate(b);
-    if (_write_it == 0)
-        write(1, "rr\n", 3);
-    //  t_stack *current = *a;
-    // while (current)
-    // {
-    //     printf("%d\n", current->nbr);
-    //     current = current->next;
-    // }
+	ft_rotate(a);
+	ft_rotate(b);
+	if (_write_it == 0)
+		write(1, "rr\n", 3);
+	//  t_stack *current = *a;
+	// while (current)
+	// {
+	//     printf("%d\n", current->nbr);
+	//     current = current->next;
+	// }
 }
-    
-
-    

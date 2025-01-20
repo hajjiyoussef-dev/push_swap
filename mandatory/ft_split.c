@@ -48,7 +48,7 @@ static char	*ft_str_dup(const char *s1, int size)
 	int		i;
 
 	i = 0;
-	ptr = (char *) malloc((size + 1) * sizeof(char));
+	ptr = (char *)malloc((size + 1) * sizeof(char));
 	if (!ptr)
 		return (NULL);
 	while (s1[i] && i < size)
@@ -92,12 +92,12 @@ static char	**help_split(const char *s, char c, char **string)
 char	**ft_split(char const *s, char c)
 {
 	char	**string;
-	int 	i;
+	int		i;
 
 	i = 0;
 	if (!s)
 		return (NULL);
-	string = (char **) malloc((count_word(s, c) + 1) * sizeof(char *));
+	string = (char **)malloc((count_word(s, c) + 1) * sizeof(char *));
 	if (!string)
 		return (NULL);
 	while (i++ < count_word(s, c))

@@ -12,17 +12,17 @@
 
 #include "push_swap.h"
 
-void ft_give_the_stack_index(t_stack **stack)
+void	ft_give_the_stack_index(t_stack **stack)
 {
-    int i;
-    t_stack *help;
+	int i;
+	t_stack *help;
 
-    i = 0;
-    help = *stack;
-    while (help)
-    {
-        help->index = i++;
-        help = help->next;
-    }
-    help = NULL;
+	i = 0;
+	help = *stack;
+	while (help)
+	{
+		help->index = i++;
+		help = help->next;
+	}
+	help = NULL;
 }

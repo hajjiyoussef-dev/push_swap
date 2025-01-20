@@ -12,38 +12,38 @@
 
 #include "push_swap.h"
 
-void two_up(t_stack **a, t_stack **b, t_stack *top, t_stack *best)
+void	two_up(t_stack **a, t_stack **b, t_stack *top, t_stack *best)
 {
-    while ((*a)->nbr != top->nbr && (*b)->nbr != best->nbr)
-        ft_rr(a, b, 0);
-    while ((*a)->nbr != top->nbr)
-        ft_ra(a, 0);
-    while ((*b)->nbr != best->nbr)
-        ft_rb(b, 0);
+	while ((*a)->nbr != top->nbr && (*b)->nbr != best->nbr)
+		ft_rr(a, b, 0);
+	while ((*a)->nbr != top->nbr)
+		ft_ra(a, 0);
+	while ((*b)->nbr != best->nbr)
+		ft_rb(b, 0);
 }
 
-void two_down(t_stack **a, t_stack **b, t_stack *top, t_stack *best)
+void	two_down(t_stack **a, t_stack **b, t_stack *top, t_stack *best)
 {
-    while ((*a)->nbr != top->nbr && (*b)->nbr != best->nbr)
-        ft_rrr(a, b, 0);
-    while ((*a)->nbr != top->nbr)
-        ft_rra(a, 0);
-    while ((*b)->nbr != best->nbr)
-        ft_rrb(b, 0);
+	while ((*a)->nbr != top->nbr && (*b)->nbr != best->nbr)
+		ft_rrr(a, b, 0);
+	while ((*a)->nbr != top->nbr)
+		ft_rra(a, 0);
+	while ((*b)->nbr != best->nbr)
+		ft_rrb(b, 0);
 }
 
-void up_down(t_stack **a, t_stack **b, t_stack *top, t_stack *best)
+void	up_down(t_stack **a, t_stack **b, t_stack *top, t_stack *best)
 {
-    while ((*a)->nbr != top->nbr)
-        ft_ra(a, 0);
-    while ((*b)->nbr != best->nbr)
-        ft_rrb(b, 0);
+	while ((*a)->nbr != top->nbr)
+		ft_ra(a, 0);
+	while ((*b)->nbr != best->nbr)
+		ft_rrb(b, 0);
 }
 
-void down_up(t_stack **a, t_stack **b, t_stack *top, t_stack *best)
+void	down_up(t_stack **a, t_stack **b, t_stack *top, t_stack *best)
 {
-    while ((*a)->nbr != top->nbr)
-        ft_rra(a, 0);
-    while ((*b)->nbr != best->nbr)
-        ft_rb(b, 0);
+	while ((*a)->nbr != top->nbr)
+		ft_rra(a, 0);
+	while ((*b)->nbr != best->nbr)
+		ft_rb(b, 0);
 }

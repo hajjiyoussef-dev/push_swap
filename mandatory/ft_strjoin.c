@@ -67,9 +67,9 @@ char	*mallocat_it(int size, char **strs, char *sep)
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int		j;
-	char	*join;
-	char	*strkhawya;
+	int j;
+	char *join;
+	char *strkhawya;
 
 	j = 0;
 	if (size <= 0)

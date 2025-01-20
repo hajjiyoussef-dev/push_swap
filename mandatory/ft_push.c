@@ -15,9 +15,9 @@
 // void ft_push(t_stack **src, t_stack **dest)
 // {
 //     t_stack *help;
-    
+
 //     if (!*src)
-//         return;
+//         return ;
 //     help = (*src);
 //     (*src) = (*src)->next;
 //     help->next = (*dest);
@@ -26,52 +26,47 @@
 //     ft_give_the_stack_index(dest);
 // }
 
-void ft_push(t_stack **src, t_stack **dest)
+void	ft_push(t_stack **src, t_stack **dest)
 {
-    t_stack *help;
+	t_stack	*help;
 
-    if (!*src)  // Check if source stack is empty
-        return;
-
-    help = (*src);          // Save the top element of src
-    (*src) = (*src)->next;  // Move src to the next element
-    help->next = (*dest);   // Link the saved element to the top of dest
-    (*dest) = help;         // Update dest to point to the new top element
-
-    ft_give_the_stack_index(src);
-    ft_give_the_stack_index(dest);
+	if (!*src) // Check if source stack is empty
+		return ;
+	help = (*src);         // Save the top element of src
+	(*src) = (*src)->next; // Move src to the next element
+	help->next = (*dest);  // Link the saved element to the top of dest
+	(*dest) = help;        // Update dest to point to the new top element
+	ft_give_the_stack_index(src);
+	ft_give_the_stack_index(dest);
 }
 
-void ft_pa(t_stack **a , t_stack **b, int _write_it)
+void	ft_pa(t_stack **a, t_stack **b, int _write_it)
 {
-    ft_push(b, a);
-   
-   // print_stack(*b, 'B');
-   // print_stack(*a, 'A');
-    if (_write_it == 0)
-        write(1, "pa\n", 3);
-    // t_stack *current = *b;
-    // while (current)
-    // {
-    //     printf("%d\n", current->nbr);
-    //     current = current->next;
-    // }
+	ft_push(b, a);
+	// print_stack(*b, 'B');
+	// print_stack(*a, 'A');
+	if (_write_it == 0)
+		write(1, "pa\n", 3);
+	// t_stack *current = *b;
+	// while (current)
+	// {
+	//     printf("%d\n", current->nbr);
+	//     current = current->next;
+	// }
 }
 
-void ft_pb(t_stack **a, t_stack **b, int _write_it)
+void	ft_pb(t_stack **a, t_stack **b, int _write_it)
 {
-    ft_push(a, b);
-    // print_stack(*a, 'A');
-    // print_stack(*b, 'B');
-    if (_write_it == 0)
-        write(1, "pb\n", 3);
+	ft_push(a, b);
+	// print_stack(*a, 'A');
+	// print_stack(*b, 'B');
+	if (_write_it == 0)
+		write(1, "pb\n", 3);
 
-   
-    
-    // t_stack *current = *a;
-    // while (current)
-    // {
-    //     printf("%d\n", current->nbr);
-    //     current = current->next;
-    // }
+	// t_stack *current = *a;
+	// while (current)
+	// {
+	//     printf("%d\n", current->nbr);
+	//     current = current->next;
+	// }
 }

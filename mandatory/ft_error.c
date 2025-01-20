@@ -6,25 +6,14 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:31 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/14 09:56:05 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/19 23:58:17 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void ft_error(void)
+void	ft_error(void)
 {
-    
-    write(1, "Error\n", 6);
-    exit(1);
+	write(1, "Error\n", 6);
+	exit(1);
 }
-
-// void ft_error(char *str)
-// {
-//     while (*str)
-//     {
-//         write(1, &(*str), 6);
-//         str++;
-//     }
-//     exit(1);
-// }
