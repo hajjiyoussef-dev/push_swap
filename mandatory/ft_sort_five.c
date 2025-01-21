@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:20:52 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/20 13:38:54 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/21 16:12:07 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,35 +41,6 @@ int	ft_seconed_min(t_stack *stack, int min)
 	}
 	return (seconed_min);
 }
-
-// void ft_sort_five(t_stack **a, t_stack **b, size_t size_a)
-// {
-//     int min;
-//     int seconed_min;
-//     t_stack *help;
-
-//     while (size_a > 3)
-//     {
-//         min = ft_min_five(*a);
-//         help = (*a);
-//         while (help && help->nbr != min)
-//             help = help->next;
-//         while ((*a) != help)
-//             ft_ra(a, 0);
-//         ft_pb(a, b, 0);
-//         size_a--;
-//         seconed_min = ft_seconed_min(*a , min);
-//         help = *a;
-//         while (help && help->nbr != seconed_min)
-//             help = help->next;
-//         while (*a != help)
-//             ft_ra(a, 0);
-//         ft_pb(a, b, 0);
-//         size_a--;
-//     }
-//     ft_sort_three(a);
-//     (ft_pa(b, a, 0), ft_pa(b, a, 0));
-// }
 
 void	ft_sort_five(t_stack **a, t_stack **b, size_t size_a)
 {
