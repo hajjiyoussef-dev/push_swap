@@ -18,30 +18,29 @@ OBJS = ${SRC:.c=.o}
 BON_OBJS = ${SRC_BON:.c=.o}
 CC = cc  
 CFLAGS = -Wall -Wextra -Werror
-AR = ar -rc
 RM = rm -rf
 
 
 %.o : %.c ./bonus/checker.h  ./mandatory/push_swap.h
-	${CC} ${CFLAGS} -c $<  -o $@
+	@${CC} ${CFLAGS} -c $<  -o $@
 
 ${NAME}: ${OBJS}
-		${CC} ${CFLAGS} -o ${NAME} ${OBJS}
+		@${CC} ${CFLAGS} -o ${NAME} ${OBJS}
 
 
 ${NAME_B}: ${BON_OBJS}
-		${CC} ${CFLAGS} -o ${NAME_B} ${BON_OBJS}
+		@${CC} ${CFLAGS} -o ${NAME_B} ${BON_OBJS}
 
 all: ${NAME}
 
 bonus: ${NAME_B}
 
 clean:
-	${RM} ${OBJS} ${BON_OBJS}
+	@${RM} ${OBJS} ${BON_OBJS}
 	
 fclean : clean
-	${RM} ${NAME} ${NAME_B}
+	@${RM} ${NAME} ${NAME_B}
 
-re :  fclean all 
+re : fclean all 
 
-.PHONY: all clean fclean re boonus
+.PHONY: all clean boonus

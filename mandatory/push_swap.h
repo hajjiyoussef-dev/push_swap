@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 05:59:55 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/20 12:28:10 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/21 18:40:04 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int					ft_is_space(char *argv);
 char				*ft_strjoin(int size, char **strs, char *sep);
 void				ft_error(void);
 void				ft_free_tab(char **tab);
-// void ft_error(char *str);
+
 char				**ft_split(char const *s, char c);
 int					ft_atoi(const char *str, t_stack **a, char **allstr);
 
@@ -59,7 +59,6 @@ void				ft_pa(t_stack **a, t_stack **b, int _write_it);
 void				ft_pb(t_stack **a, t_stack **b, int _write_it);
 
 // rotate
-// void ft_rotate(t_stack **stack);
 void				ft_ra(t_stack **a, int _write_it);
 void				ft_rb(t_stack **b, int _write_it);
 void				ft_rr(t_stack **a, t_stack **b, int _write_it);

@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 21:20:52 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/21 16:12:07 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/21 18:38:47 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,6 @@ int	ft_min_five(t_stack *stack)
 		stack = stack->next;
 	}
 	return (min);
-}
-
-int	ft_seconed_min(t_stack *stack, int min)
-{
-	int	seconed_min;
-
-	seconed_min = __INT_MAX__;
-	while (stack)
-	{
-		if (stack->nbr != min && stack->nbr < seconed_min)
-			seconed_min = stack->nbr;
-		stack = stack->next;
-	}
-	return (seconed_min);
 }
 
 void	ft_sort_five(t_stack **a, t_stack **b, size_t size_a)
