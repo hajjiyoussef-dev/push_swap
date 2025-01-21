@@ -6,12 +6,11 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:58 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/20 00:05:38 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/20 13:01:22 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	ft_sort(t_stack **a, t_stack **b, size_t size_a)
 {
@@ -28,22 +27,6 @@ void	ft_sort(t_stack **a, t_stack **b, size_t size_a)
 	}
 }
 
-// void print_stack(t_stack *stack, char stack_name)
-// {
-//     printf("Stack %c: ", stack_name);
-//     while (stack)
-//     {
-//         printf("%d ", stack->nbr);
-//         stack = stack->next;
-//     }
-//     printf("\n");
-// }
-
-void	v(void)
-{
-	system("valgrind ./push_swap");
-}
-
 int	main(int argc, char **argv)
 {
 	t_stack	*a;
@@ -51,6 +34,8 @@ int	main(int argc, char **argv)
 	t_stack	*b;
 
 	size_a = 0;
+	if (argc == 1)
+		return (1);
 	if (argc > 1)
 	{
 		a = ft_filling_a(argc, argv);

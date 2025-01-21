@@ -6,59 +6,69 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:19:01 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/19 08:24:04 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/21 14:43:40 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
+static void	ft_cleanup_exit(t_stack **a, char **allstr)
+{
+	if (a)
+		ft_free(a);
+	if (allstr)
+		ft_free_tab(allstr);
+	ft_error();
+}
 
-static	int	ft_isdigit(int c)
+static int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)
 		return (1);
 	return (0);
 }
 
-int help_atoi(int num, const char *str, t_stack **a, char **allstr, int sn, int i)
+int	help_atoi(long long arr[], const char *str, int *error)
 {
-	
-	if (!ft_isdigit(str[i]))
+	if (!ft_isdigit(str[arr[2]]))
 	{
-		if (a)
-			ft_free(a);
-		(ft_free_tab(allstr), ft_error());
+		*error = 1;
+		return (0);
 	}
-	if ((num > (2147483647 / 10) || (num == 2147483647 / 10 && (str[i] - '0') > 7)) ||
-		(sn == -1 && num == 2147483647 / 10 && (str[i] - '0') == 8))
+	if ((arr[0] > (2147483647 / 10) || (arr[0] == 2147483647 / 10
+				&& (str[arr[2]] - '0') > 7)) || (arr[1] == -1
+			&& arr[0] == 2147483647 / 10 && (str[arr[2]] - '0') == 8))
 	{
-		if (a)
-			ft_free(a);
-		(ft_free_tab(allstr), ft_error());
+		*error = 1;
+		return (0);
 	}
-	num = (str[i] - 48) + (num * 10);
-	return (num);
-	
+	arr[0] = (str[arr[2]] - 48) + (arr[0] * 10);
+	return (arr[0]);
 }
 
 int	ft_atoi(const char *str, t_stack **a, char **allstr)
 {
-	int		i;
-	int		sn;
-	long long	num;
+	long long	arr[3];
+	int			error;
 
-	(1) && (i = 0, sn = 1, num = 0);
-	while (str[i] == ' ' || str[i] == '\f' || str[i] == '\n' || str[i] == '\r' || str[i] == '\v')
-		i++;
-	if (str[i] == '-' && ft_isdigit(str[i + 1]))
-		sn *= -1;
-	if ((str[i] == '+' && ft_isdigit(str[i + 1]))
-		|| (str[i] == '-' && ft_isdigit(str[i + 1])))
-		i++;
-	while (str[i])
+	error = 0;
+	arr[0] = 0;
+	arr[1] = 1;
+	arr[2] = 0;
+	while (str[arr[2]] == ' ' || str[arr[2]] == '\f' || str[arr[2]] == '\n'
+		|| str[arr[2]] == '\r' || str[arr[2]] == '\v')
+		arr[2]++;
+	if (str[arr[2]] == '-' && ft_isdigit(str[arr[2] + 1]))
+		arr[1] *= -1;
+	if ((str[arr[2]] == '+' && ft_isdigit(str[arr[2] + 1]))
+		|| (str[arr[2]] == '-' && ft_isdigit(str[arr[2] + 1])))
+		arr[2]++;
+	while (str[arr[2]])
 	{
-		num = help_atoi(num, str, a, allstr, sn, i);
-		i++;
+		arr[0] = help_atoi(arr, str, &error);
+		arr[2]++;
 	}
-	return (num * sn);
+	if (error)
+		ft_cleanup_exit(a, allstr);
+	return (arr[0] * arr[1]);
 }

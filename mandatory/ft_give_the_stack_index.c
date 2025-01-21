@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 00:52:06 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/04 10:04:25 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/20 10:57:08 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_give_the_stack_index(t_stack **stack)
 {
-	int i;
-	t_stack *help;
+	int		i;
+	t_stack	*help;
 
 	i = 0;
 	help = *stack;

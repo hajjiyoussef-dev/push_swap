@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 13:09:00 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/06 21:37:06 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/20 10:57:57 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,9 @@ int	ft_max_three(t_stack *stack)
 
 void	ft_sort_three(t_stack **a)
 {
-	int max;
+	int	max;
 
 	max = ft_max_three(*a);
-
 	if ((*a)->nbr == max)
 		ft_ra(a, 0);
 	if ((*a)->next->nbr == max)

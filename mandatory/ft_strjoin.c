@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/04 12:30:50 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/19 05:04:06 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/20 10:53:28 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,9 +67,9 @@ char	*mallocat_it(int size, char **strs, char *sep)
 
 char	*ft_strjoin(int size, char **strs, char *sep)
 {
-	int j;
-	char *join;
-	char *strkhawya;
+	int		j;
+	char	*join;
+	char	*strkhawya;
 
 	j = 0;
 	if (size <= 0)

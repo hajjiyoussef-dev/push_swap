@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:16:49 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/13 06:17:23 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/20 16:12:23 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static char	*ft_str_dup(const char *s1, int size)
 	int		i;
 
 	i = 0;
-	ptr = (char *) malloc((size + 1) * sizeof(char));
+	ptr = (char *)malloc((size + 1) * sizeof(char));
 	if (!ptr)
 		return (NULL);
 	while (s1[i] && i < size)
@@ -94,7 +94,7 @@ char	**ft_split_checker(char const *s, char c)
 
 	if (!s)
 		return (NULL);
-	string = (char **) malloc((count_word(s, c) + 1) * sizeof(char *));
+	string = (char **)malloc((count_word(s, c) + 1) * sizeof(char *));
 	if (!string)
 		return (NULL);
 	return (help_split(s, c, string));

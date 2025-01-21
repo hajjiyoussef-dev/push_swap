@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/11 02:55:29 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/19 23:57:59 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/20 11:01:44 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ t_stack	*max_nbr(t_stack *a)
 
 t_stack	*ft_best_elem(t_stack *s)
 {
-	t_stack *tmp;
-	int min;
+	t_stack	*tmp;
+	int		min;
 
 	min = s->moves;
 	tmp = s;

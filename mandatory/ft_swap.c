@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 21:21:29 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/06 19:37:13 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/20 10:17:02 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,23 +25,3 @@ void	ft_sa(t_stack **a, int _write_it)
 		write(1, "sa\n", 3);
 	ft_give_the_stack_index(&(*a));
 }
-
-// void ft_ra(t_stack *a, int _write_it)
-// {
-//     t_stack *first;
-//     t_stack *last;
-
-//     if (!(a) || !(a)->index)
-//         return ;
-//     first = a->nbr;
-//     a = a->next;
-
-//     last = a;
-
-//     while (last->next)
-//         last = last->next;
-
-//     last->next = first;
-//     first->next = NULL;
-
-// }

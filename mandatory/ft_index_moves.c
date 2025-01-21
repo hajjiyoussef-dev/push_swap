@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/10 09:11:42 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/19 23:58:37 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/20 10:24:45 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,14 @@ int	get_moves(t_stack *a, t_stack *b, t_stack *help, t_stack *top)
 	int	down_up;
 
 	two_up = get_max(top->index, help->index);
-	// ra && rb
 	two_down = get_max((ft_size(a) - top->index), (ft_size(b) - help->index));
-	// rra && rrb
 	up_down = top->index + (ft_size(b) - help->index);
-	// ra && rrb
 	down_up = help->index + (ft_size(a) - top->index);
-	// rra && ra
 	return (get_best_move(two_up, two_down, up_down, down_up));
 }
 
 t_stack	*get_top(t_stack *a, t_stack *help)
-// retur a pointer to the next node to but it befor it
 {
-	// see if the number comes befor the min nbr in a or after the max number in a
 	if (help->nbr < min_nbr(a)->nbr || help->nbr > max_nbr(a)->nbr)
 		return (min_nbr(a));
 	if (a->nbr > help->nbr && ft_lst_last(a)->nbr < help->nbr)
@@ -64,6 +58,5 @@ t_stack	*get_top(t_stack *a, t_stack *help)
 			return (a->next);
 		a = a->next;
 	}
-
 	return (NULL);
 }

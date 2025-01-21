@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 19:49:56 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/19 05:10:51 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/21 14:43:14 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,12 @@ t_stack	*ft_filling_a(int argc, char **argv)
 		ft_error();
 	a = NULL;
 	s = ft_strjoin(argc - 1, argv + 1, " ");
-	// joine all the argemment withe space between theme !!
 	if (!s)
 		ft_error();
-	str = ft_split(s, ' '); // splite all the agremment withe the sepa space ??
+	str = ft_split(s, ' ');
 	free(s);
 	if (!str)
-		(free(s), ft_error());
+		ft_error();
 	i = -1;
 	while (str[++i])
 	{

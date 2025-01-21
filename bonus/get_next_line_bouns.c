@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 06:06:37 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/19 09:13:47 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/21 13:32:41 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,18 +77,13 @@ char	*get_next_line(int fd, int cleanup)
 	char		*line;
 
 	if (cleanup)
-    {
-        if (res)
-            free(res);
-        res = NULL;
-        return (NULL);
-    }
+	{
+		if (res)
+			free(res);
+		return (res = NULL, NULL);
+	}
 	if (BUFFER_SIZE <= 0 || BUFFER_SIZE > INT_MAX || read(fd, 0, 0) < 0)
-    {
-        if (res)
-            free(res);
-		return (res = NULL);
-    }
+		return (free(res), res = NULL);
 	buff = malloc(((size_t)BUFFER_SIZE + 1) * sizeof(char));
 	if (!buff)
 		return (free(res), NULL);

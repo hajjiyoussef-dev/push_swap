@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 05:54:10 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/19 08:45:37 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/20 14:03:33 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,64 +25,64 @@ void	ft_free_tab(char **tab)
 	free(tab);
 }
 
-int ft_is_space(char *argv)
+int	ft_is_space(char *argv)
 {
-    int i;
-    int is_space;
+	int	i;
+	int	is_space;
 
-    i = 0;
-    is_space = 0;
-    while (argv[i])
-    {
-        if (argv[i] == ' ' || argv[i] == '\t')
-            is_space++;
-        i++;
-    }
-    if (i == is_space)
-        return(0);
-    return (1);
+	i = 0;
+	is_space = 0;
+	while (argv[i])
+	{
+		if (argv[i] == ' ' || argv[i] == '\t')
+			is_space++;
+		i++;
+	}
+	if (i == is_space)
+		return (0);
+	return (1);
 }
 
-int ft_argv_empty(char **argv)
+int	ft_argv_empty(char **argv)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (argv[i])
-    {
-        if (!(argv[i][0]))
-            return (0);
-        if (!(ft_is_space(argv[i])))
-            return (0);
-        i++;
-    }
-    return (1);
+	i = 0;
+	while (argv[i])
+	{
+		if (!(argv[i][0]))
+			return (0);
+		if (!(ft_is_space(argv[i])))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
-t_stack *ft_filling_a(int argc, char **argv)
+t_stack	*ft_filling_a(int argc, char **argv)
 {
-    t_stack *a;
-    char *s;
-    char **str;
-    int i;
-    int num;
-    
-    if (!(ft_argv_empty(argv)))   
-        ft_error();
-    a = NULL;
-    s = ft_strjoin_checker(argc - 1, argv + 1, " "); // joine all the argemment withe space between theme !!
-    if (!s)
-        ft_error();
-    str = ft_split_checker(s, ' '); // splite all the agremment withe the sepa space ??
-    free(s); 
-    if (!str)
-        (free(s), ft_error());
-    i = -1;
-    while (str[++i])
-    {
-        num =  ft_atoi(str[i], &a, str);
-        ft_lst_add_back(&a, ft_new_stack(num));
-    }
-    ft_free_tab(str);
-    return(a);    
+	t_stack	*a;
+	char	*s;
+	char	**str;
+	int		i;
+	int		num;
+
+	if (!(ft_argv_empty(argv)))
+		ft_error();
+	a = NULL;
+	s = ft_strjoin_checker(argc - 1, argv + 1, " ");
+	if (!s)
+		ft_error();
+	str = ft_split_checker(s, ' ');
+	free(s);
+	if (!str)
+		(free(s), ft_error());
+	i = -1;
+	while (str[++i])
+	{
+		num = ft_atoi(str[i], &a, str);
+		ft_lst_add_back(&a, ft_new_stack(num));
+	}
+	ft_free_tab(str);
+	return (a);
 }
