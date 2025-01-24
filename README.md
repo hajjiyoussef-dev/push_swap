@@ -63,30 +63,30 @@ The goal of the `push_swap` project is to write a program that sorts data on a s
 ```
 
 ### Usage
-## Run the program with a set of integers as arguments:
+**Run the program with a set of integers as arguments:**
 
 ```bash
 ./push_swap [list of integers] 
 ``` 
-## Example:
+**Example:**
 
 ```bash
     ./push_swap 3 2 5 1 4
 ```
 
-## To count the number of moves:
+**To count the number of moves:**
 
 ```bash
     ./push_swap 3 2 5 1 4 | wc -l
 ```  
-## To check if the output is correct, use the checker program (if implemented):
+**To check if the output is correct, use the checker program (if implemented):**
 
 ```bash
 ./push_swap 3 2 5 1 4 | ./checker 3 2 5 1 4
 ```
 
 ### Bonus
-If implemented, the following additional features are included:
+**If implemented, the following additional features are included:**
 
 - `Checker Program`: Validates the correctness of the push_swap output.
 - `Visualizer`: A script or tool to visualize the sorting process.
