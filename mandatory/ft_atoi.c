@@ -6,7 +6,7 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/03 22:06:59 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/21 14:24:58 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/23 17:08:57 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,6 @@ int	ft_atoi(const char *str, t_stack **a, char **allstr)
 		arr[2]++;
 	}
 	if (error)
-		ft_cleanup_exit(a, allstr);
+		ft_cleanup_exit(a, allstr);		
 	return (arr[0] * arr[1]);
 }

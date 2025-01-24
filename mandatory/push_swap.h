@@ -6,14 +6,13 @@
 /*   By: yhajji <yhajji@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/13 05:59:55 by yhajji            #+#    #+#             */
-/*   Updated: 2025/01/21 18:40:04 by yhajji           ###   ########.fr       */
+/*   Updated: 2025/01/23 15:36:34 by yhajji           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
 
