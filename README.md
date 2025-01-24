@@ -56,7 +56,7 @@ The goal of the `push_swap` project is to write a program that sorts data on a s
 
 ---
 
-<!-- ### Compile the program using Makefile:
+### Compile the program using Makefile:
 
 ```bash
     make 
@@ -105,5 +105,5 @@ Project developed by `Yhajji` at 42 Network.
 For more information, visit the 42 Network Curriculum.
 ```bash
 Feel free to adjust the sections or add specific implementation details for your project. Let me know if you'd like additional help with any section!
-``` -->
+``` 
 
