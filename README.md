@@ -89,7 +89,7 @@ The goal of the `push_swap` project is to write a program that sorts data on a s
 If implemented, the following additional features are included:
 
 `Checker Program`: Validates the correctness of the push_swap output.
-`Visualizer`: A script or tool to visualize the sorting process.
+ - `Visualizer`: A script or tool to visualize the sorting process.
 
 
 
@@ -102,7 +102,7 @@ cd push_swap
 
 ### Credits
 Project developed by `Yhajji` at 42 Network.
-For more information, visit the 42 Network Curriculum.
+ - For more information, visit the 42 Network Curriculum.
 ```bash
 Feel free to adjust the sections or add specific implementation details for your project. Let me know if you'd like additional help with any section!
 ``` 
